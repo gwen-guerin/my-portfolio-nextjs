@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import mymovizImg from '../public/assets/projects/mymoviz.PNG';
+import mymovizImg from '../public/assets/projects/mymoviz.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 
