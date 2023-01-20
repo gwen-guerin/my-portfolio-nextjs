@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import newsImg from '../public/assets/projects/morningnews.png';
+import newsImg from '../public/assets/projects/morningnews.PNG';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 
