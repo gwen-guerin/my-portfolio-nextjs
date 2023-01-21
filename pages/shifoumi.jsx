@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import shifoumiImg from '../public/assets/projects/rockpapercisors.png';
+import shifoumiImg from '../public/assets/projects/rockpapercisors.jpeg';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 

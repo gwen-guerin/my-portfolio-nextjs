@@ -93,7 +93,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* mobile menu */}
 
       <div
         className={

@@ -1,10 +1,10 @@
 import React from 'react';
-import mymoviz from '../public/assets/projects/mymoviz.PNG'
-import newsImg from '../public/assets/projects/morningnews.PNG';
-import pokedexImg from '../public/assets/projects/pokedex.PNG';
-import shifoumiImg from '../public/assets/projects/rockpapercisors.png';
-import locapicImg from '../public/assets/projects/locapic.png';
-import wannaplayImg from '../public/assets/projects/wannaplay.png';
+import mymoviz from '../public/assets/projects/mymoviz.jpeg'
+import newsImg from '../public/assets/projects/morningnews.jpeg';
+import pokedexImg from '../public/assets/projects/pokedex.jpeg';
+import shifoumiImg from '../public/assets/projects/rockpapercisors.jpeg';
+import locapicImg from '../public/assets/projects/locapic.jpeg';
+import wannaplayImg from '../public/assets/projects/wannaplay.jpeg';
 import ProjectsItem from './ProjectsItem';
 
 const Projects = () => {

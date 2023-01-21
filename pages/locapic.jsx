@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import locaImg from '../public/assets/projects/locapic.png';
+import locaImg from '../public/assets/projects/locapic.jpeg';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 

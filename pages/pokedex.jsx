@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import pokeImg from '../public/assets/projects/pokedex.PNG';
+import pokeImg from '../public/assets/projects/pokedex.jpeg';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 
