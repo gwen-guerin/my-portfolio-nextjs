@@ -5,7 +5,7 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 
 export default function Main() {
   return (
-    <div id='main' className="w-full h-screen text-center">
+    <div id="main" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="uppercase tracking-widest text-gray-600">
@@ -40,12 +40,15 @@ export default function Main() {
                 <AiFillGithub />
               </div>
             </a>
-            <Link href="/#contact">
+            <a href="mailto:gwenael.guerin@protonmail.com">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                 <AiOutlineMail />
               </div>
-            </Link>
-            <Link href="/resume">
+            </a>
+            <Link
+              href="https://online.flippingbook.com/view/1070624447"
+              target="_blank"
+            >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                 <BsFillPersonLinesFill />
               </div>

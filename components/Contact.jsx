@@ -6,7 +6,7 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 
 const Contact = () => {
   return (
-    <div id='contact' className="w-full lg:h-screen">
+    <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl -tracking-widest uppercase text-[#6fa2c7]">
           Contact
@@ -15,12 +15,8 @@ const Contact = () => {
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
-              <div>
-                <img
-                  className="rounded-xl hover:scale-105 ease-in duraton-150"
-                  src="https://source.unsplash.com/-0xCCPIbl3M"
-                  alt="/"
-                />
+              <div className="rounded-xl hover:scale-105 ease-in duration-150">
+                <img className='rounded-xl' src="https://source.unsplash.com/-0xCCPIbl3M" alt="/" />
               </div>
               <div>
                 <h2 className="py-2">Gwénaël Guérin</h2>
@@ -51,12 +47,15 @@ const Contact = () => {
                       <AiFillGithub />
                     </div>
                   </a>
-                  <Link href="/#contact">
+                  <a href="mailto:gwenael.guerin@protonmail.com">
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                       <AiOutlineMail />
                     </div>
-                  </Link>
-                  <Link href="/resume">
+                  </a>
+                  <Link
+                    href="https://online.flippingbook.com/view/1070624447/"
+                    target="_blank"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                       <BsFillPersonLinesFill />
                     </div>
@@ -118,7 +117,10 @@ const Contact = () => {
         <div className="flex justify-center py-12">
           <Link href="/">
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
-              <HiOutlineChevronDoubleUp className='m-auto text-[#6fa2c7]' size={30} />
+              <HiOutlineChevronDoubleUp
+                className="m-auto text-[#6fa2c7]"
+                size={30}
+              />
             </div>
           </Link>
         </div>

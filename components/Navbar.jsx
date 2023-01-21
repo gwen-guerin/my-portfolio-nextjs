@@ -81,18 +81,17 @@ const NavBar = () => {
                 PROJECTS
               </li>
             </Link>
-            <Link href="/#contact">
+            <Link href="/#contacts">
               <li className="ml-10 text-sm uppercase hover:scale-105">
                 CONTACT
               </li>
             </Link>
           </ul>
           <div onClick={handleNav} className="md:hidden cursor-pointer px-2">
-            <AiOutlineMenu style={{color: `${linkColor}`}} size={25} />
+            <AiOutlineMenu style={{ color: `${linkColor}` }} size={25} />
           </div>
         </div>
       </div>
-
 
       <div
         className={
@@ -171,18 +170,31 @@ const NavBar = () => {
                 Let's connect
               </p>
               <div className="flex items-center justify-between w-full my-4 sm:w-[80%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
-                  <AiFillLinkedin />
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/gw%C3%A9na%C3%ABl-gu%C3%A9rin-0636901a7/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
+                    <AiFillLinkedin />
+                  </div>
+                </a>
                 <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
                   <AiFillGithub />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
-                  <AiOutlineMail />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
-                  <BsFillPersonLinesFill />
-                </div>
+                <a href="mailto:gwenael.guerin@protonmail.com">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
+                    <AiOutlineMail />
+                  </div>
+                </a>
+                <Link
+                  href="https://online.flippingbook.com/view/1070624447/"
+                  target="_blank"
+                >
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
+                    <BsFillPersonLinesFill />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
