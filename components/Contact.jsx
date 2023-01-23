@@ -23,7 +23,7 @@ const Contact = () => {
 
     if (isValidForm) {
       setButtonText('Sending');
-      const res = await fetch('/pages/api/sendgrid', {
+      const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
           mail,
           phone,
