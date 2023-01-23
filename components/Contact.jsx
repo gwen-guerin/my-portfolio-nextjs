@@ -16,31 +16,14 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await fetch('/api/sendgrid', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({
-  //         mail,
-  //         name,
-  //         subject,
-  //         message,
-  //       }),
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   console.log("coucou")
-  // };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isValidForm = handleValidation();
 
     if (isValidForm) {
       setButtonText('Sending');
-      const res = await fetch('/api/sendgrid', {
+      const res = await fetch('/pages/api/sendgrid', {
         body: JSON.stringify({
           mail,
           phone,
