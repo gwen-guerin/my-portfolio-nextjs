@@ -16,7 +16,6 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isValidForm = handleValidation();
@@ -36,10 +35,13 @@ const Contact = () => {
         },
         method: 'POST',
       });
-      // console.log("coucou bitch")
+      setName('');
+      setPhone('');
+      setMail('');
+      setSubject('');
+      setMessage('');
       const { error } = await res.json();
       if (error) {
-        // console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
         setButtonText('Send');
