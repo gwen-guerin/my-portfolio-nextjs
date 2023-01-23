@@ -81,7 +81,7 @@ const NavBar = () => {
                 PROJECTS
               </li>
             </Link>
-            <Link href="/#contacts">
+            <Link href="/#contact">
               <li className="ml-10 text-sm uppercase hover:scale-105">
                 CONTACT
               </li>

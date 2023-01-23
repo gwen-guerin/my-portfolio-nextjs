@@ -1,10 +1,100 @@
+import { METHODS } from 'http';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [mail, setMail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
+  const [buttonText, setButtonText] = useState('Send');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await fetch('/api/sendgrid', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({
+  //         mail,
+  //         name,
+  //         subject,
+  //         message,
+  //       }),
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   console.log("coucou")
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let isValidForm = handleValidation();
+
+    if (isValidForm) {
+      setButtonText('Sending');
+      const res = await fetch('/api/sendgrid', {
+        body: JSON.stringify({
+          mail,
+          phone,
+          name,
+          subject,
+          message,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+      // console.log("coucou bitch")
+      const { error } = await res.json();
+      if (error) {
+        // console.log(error);
+        setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+        setButtonText('Send');
+        return;
+      }
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+      setButtonText('Send');
+    }
+    console.log(name, mail, subject, message);
+  };
+
+  const handleValidation = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (name.length <= 0) {
+      tempErrors['fullname'] = true;
+      isValid = false;
+    }
+    if (mail.length <= 0) {
+      tempErrors['email'] = true;
+      isValid = false;
+    }
+    if (subject.length <= 0) {
+      tempErrors['subject'] = true;
+      isValid = false;
+    }
+    if (message.length <= 0) {
+      tempErrors['message'] = true;
+      isValid = false;
+    }
+
+    setErrors({ ...tempErrors });
+    // console.log('errors', errors);
+    return isValid;
+  };
+
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -16,7 +106,11 @@ const Contact = () => {
           <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
               <div className="rounded-xl hover:scale-105 ease-in duration-150">
-                <img className='rounded-xl' src="https://source.unsplash.com/-0xCCPIbl3M" alt="/" />
+                <img
+                  className="rounded-xl"
+                  src="https://source.unsplash.com/-0xCCPIbl3M"
+                  alt="/"
+                />
               </div>
               <div>
                 <h2 className="py-2">Gwénaël Guérin</h2>
@@ -67,49 +161,101 @@ const Contact = () => {
 
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Name</label>
+                    <label className="uppercase text-sm py-2">
+                      Full Name<span className="text-red-500">*</span>
+                    </label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      name="name"
                     />
+                    {errors?.fullname && (
+                      <p className="text-red-500">Fullname cannot be empty.</p>
+                    )}
                   </div>
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">
                       Phone Number
                     </label>
                     <input
+                      value={phone}
+                      name="phone"
+                      onChange={(e) => setPhone(e.target.value)}
                       className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
+                      type="tel"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
+                  <label className="uppercase text-sm py-2">
+                    Email<span className="text-red-500">*</span>
+                  </label>
                   <input
+                    value={mail}
+                    name="mail"
+                    onChange={(e) => setMail(e.target.value)}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
                   />
+                  {errors?.email && (
+                    <p className="text-red-500">Email cannot be empty.</p>
+                  )}
                 </div>
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
+                  <label className="uppercase text-sm py-2">
+                    Subject<span className="text-red-500">*</span>
+                  </label>
                   <input
+                    value={subject}
+                    name="subject"
+                    onChange={(e) => setSubject(e.target.value)}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                   />
+                  {errors?.subject && (
+                    <p className="text-red-500">Subject cannot be empty.</p>
+                  )}
                 </div>
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Message</label>
+                  <label className="uppercase text-sm py-2">
+                    Message<span className="text-red-500">*</span>
+                  </label>
                   <textarea
+                    value={message}
+                    name="message"
+                    onChange={(e) => setMessage(e.target.value)}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     rows="10"
                   ></textarea>
+                  {errors?.message && (
+                    <p className="text-red-500">
+                      Message body cannot be empty.
+                    </p>
+                  )}
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button
+                  // onClick={() => handleSubmit}
+                  className="w-full p-4 text-gray-100 mt-4"
+                >
                   Send Message
                 </button>
+                <div className="text-left">
+                  {showSuccessMessage && (
+                    <p className="text-green-500 font-semibold text-sm my-2">
+                      Thank you! Your Message has been delivered.
+                    </p>
+                  )}
+                  {showFailureMessage && (
+                    <p className="text-red-500">
+                      Oops! Something went wrong, please try again.
+                    </p>
+                  )}
+                </div>
               </form>
             </div>
           </div>
