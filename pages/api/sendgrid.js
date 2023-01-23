@@ -35,13 +35,13 @@ async function sendEmail(req, res) {
               </div>
               </div>
       </body>
-      </html>`,
+      </html>`
     });
   } catch (error) {
-    return res.status(error.statusCode || 500).json({ error: error.message });
+    return await res.status(error.statusCode || 500).json({ error: error.message });
   }
 
-  return res.status(200).json({ error: "" });
+  return await res.status(200).json({ error: "" });
 }
 
 export default sendEmail;
