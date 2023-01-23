@@ -11,12 +11,12 @@ const About = () => {
           <p className='py-2 text-gray-600'>I'm the special buddy you need</p>
           <p className='py-2 text-gray-600'>
             Hi, I'm Gwen, I'm 27. I've had a lot of different jobs experiences.
-            Lately i've discovered programming. I fell in love and now i know
+            Lately i've discovered programming. I fell in love and now I know
             what I want to do of my life.
           </p>
           <p className='py-2 text-gray-600'>
             I've started to learn HTML & CSS on my own, pushed by a family
-            member. He is a developper and helped me a lot to start, to know
+            member. My brother in law is a developer and helped me a lot to start, to know
             where to go and what this was about. With the Covid, I struggled to
             find a job with nearly no experience and no degree. So I decided to
             turn to an intensive course. That's when I was accepted to the

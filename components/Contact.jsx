@@ -83,7 +83,7 @@ const Contact = () => {
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
-        <p className="text-xl -tracking-widest uppercase text-[#6fa2c7]">
+        <p className="text-xl tracking-widest uppercase text-[#6fa2c7]">
           Contact
         </p>
         <h2 className="py-4">Get In Touch</h2>
@@ -99,7 +99,7 @@ const Contact = () => {
               </div>
               <div>
                 <h2 className="py-2">Gwénaël Guérin</h2>
-                <p>Fullstack Developper Junior</p>
+                <p>Fullstack Junior Developer</p>
                 <p className="py-4">
                   I am available for full-time positions. Contact me and let the
                   magic happen !
@@ -150,7 +150,7 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">
-                      Full Name<span className="text-red-500">*</span>
+                      Fullname<span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"

@@ -15,7 +15,7 @@ export default function Main() {
             Hi, I'm <span className="text-[#6fa2c7]">Gwen</span>
           </h1>
           <h1 className="py-2 text-gray-700">
-            I'm a Fullstack Developper Junior
+            I'm a Junior Fullstack Developer
           </h1>
           <p className="py-4 text-gray-600 sm:max-w-[70%] m-auto">
             I’m focused on building responsive front-end web applications
