@@ -3,7 +3,8 @@ import sendgrid from "@sendgrid/mail";
 sendgrid.setApiKey(process.env.MYSENDGRIDAPI);
 
 async function sendEmail(req, res) {
-    try {
+    // console.log(req.body)
+    // try {
     await sendgrid.send({
       to: "gwenael.guerin74@gmail.com", // Your email where you'll receive emails
       from: "gwenael.guerin@protonmail.com", // your website email address here
@@ -37,11 +38,11 @@ async function sendEmail(req, res) {
       </body>
       </html>`
     });
-  } catch (error) {
-    return await res.status(error.statusCode || 500).json({ error: error.message });
-  }
-
-  return await res.status(200).json({ error: "" });
+//   } catch (error) {
+//     return await res.status(error.statusCode || 500).json({ error: error.message });
+//   }
+res.status(200).json({ status: "ok"})
+//   return await res.status(200).json({ status: "Ok" });
 }
 
 export default sendEmail;
