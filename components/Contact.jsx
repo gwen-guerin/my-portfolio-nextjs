@@ -12,7 +12,7 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
-  const [buttonText, setButtonText] = useState('Send');
+  const [buttonText, setButtonText] = useState('Send message');
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
@@ -21,7 +21,7 @@ const Contact = () => {
     let isValidForm = handleValidation();
 
     if (isValidForm) {
-      setButtonText('Sending');
+      setButtonText('Sending...');
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
           mail,
@@ -35,11 +35,6 @@ const Contact = () => {
         },
         method: 'POST',
       });
-      setName('');
-      setPhone('');
-      setMail('');
-      setSubject('');
-      setMessage('');
       const { error } = await res.json();
       if (error) {
         setShowSuccessMessage(false);
@@ -49,7 +44,12 @@ const Contact = () => {
       }
       setShowSuccessMessage(true);
       setShowFailureMessage(false);
-      setButtonText('Send');
+      setButtonText('Send message');
+      setName('');
+      setPhone('');
+      setMail('');
+      setSubject('');
+      setMessage('');
     }
     console.log(name, mail, subject, message);
   };
@@ -227,7 +227,7 @@ const Contact = () => {
                   // onClick={() => handleSubmit}
                   className="w-full p-4 text-gray-100 mt-4"
                 >
-                  Send Message
+                  {buttonText}
                 </button>
                 <div className="text-left">
                   {showSuccessMessage && (
