@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
-import pokeImg from '../public/assets/projects/pokedex.jpeg';
+import myPicsImg from '../public/assets/projects/mypics1.PNG';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 
-const pokedex = () => {
+const myPics = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10" />
-        <Image className="absolute z-1" fill src={pokeImg} alt="/" />
+        <Image className="absolute z-1" fill src={myPicsImg} alt="/" />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-2">Pokedex</h2>
+          <h2 className="py-2">Lino's Photography</h2>
           <h3>Next JS</h3>
         </div>
       </div>
@@ -21,12 +21,12 @@ const pokedex = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p>
-            This app was built with Next JS. It's getting all the Pokemons from
-            the PokeApi. They're displayed, 15 by 15 with cards colored
-            depending on their properties.
+            This app was built with Next JS and styled with Tailwind. It's just a little portfolio for a photographer.
+            You have a carousel of a few pictures (from unsplash because I'm not really good at photography), a work page with a few pics to attract people to add the name on their Instagram ! 
+
           </p>
           <a
-            href="https://github.com/gwen-guerin/Pokedex-Next-JS"
+            href="https://github.com/gwen-guerin/PicsWebsite-Nextjs"
             target="_blank"
             rel="noreferrer"
           >
@@ -48,7 +48,7 @@ const pokedex = () => {
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                Poke API
+                Tailwind
               </p>
             </div>
           </div>
@@ -61,4 +61,4 @@ const pokedex = () => {
   );
 };
 
-export default pokedex;
+export default myPics;

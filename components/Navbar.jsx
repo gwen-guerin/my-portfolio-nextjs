@@ -22,7 +22,7 @@ const NavBar = () => {
     if (
       router.asPath === '/mymoviz' ||
       router.asPath === '/morningnews' ||
-      router.asPath === '/pokedex' ||
+      router.asPath === '/myPics' ||
       router.asPath === '/wannaplay' ||
       router.asPath === '/shifoumi' ||
       router.asPath === '/locapic'
