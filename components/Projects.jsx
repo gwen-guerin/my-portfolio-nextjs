@@ -5,6 +5,7 @@ import myPicsImg from '../public/assets/projects/myPics.jpg';
 import shifoumiImg from '../public/assets/projects/rockpapercisors.jpeg';
 import locapicImg from '../public/assets/projects/locapic.jpeg';
 import wannaplayImg from '../public/assets/projects/wannaplay.jpeg';
+import eshopImg from '../public/assets/projects/eshop.jpeg'
 import ProjectsItem from './ProjectsItem';
 
 const Projects = () => {
@@ -20,6 +21,12 @@ const Projects = () => {
             title="My Moviz"
             backgroundImg={mymoviz}
             projectUrl="/mymoviz"
+            framework="Next js"
+          />
+          <ProjectsItem
+            title="E-Shop"
+            backgroundImg={eshopImg}
+            projectUrl="/eshop"
             framework="Next js"
           />
           <ProjectsItem
