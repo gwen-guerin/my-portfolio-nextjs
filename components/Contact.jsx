@@ -1,5 +1,5 @@
-import { METHODS } from 'http';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
@@ -79,6 +79,11 @@ const Contact = () => {
     // console.log('errors', errors);
     return isValid;
   };
+  const router = useRouter()
+  const handleResume = (e) => {
+    e.preventDefault()
+    router.push('/myResume')
+  }
 
   return (
     <div id="contact" className="w-full lg:h-screen">
@@ -131,14 +136,15 @@ const Contact = () => {
                       <AiOutlineMail />
                     </div>
                   </a>
-                  <Link
-                    href="https://online.flippingbook.com/view/1070624447/"
+                  <a
+                  onClick={handleResume}
+                    href="/#myResume"
                     target="_blank"
                   >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                       <BsFillPersonLinesFill />
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

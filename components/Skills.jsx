@@ -11,6 +11,7 @@ import Github from '../public/assets/skills/github1.png';
 import Mongo from '../public/assets/skills/mongo.png';
 import Tailwind from '../public/assets/skills/tailwind.png';
 import reduxLogo from '../public/assets/skills/redux.png'
+import firebaseLogo from '../public/assets/skills/firebase.png'
 
 export default function Skills() {
   return (
@@ -31,6 +32,7 @@ export default function Skills() {
           <SkillsItem urlImg={Github} framework="github" />
           <SkillsItem urlImg={Mongo} framework="mongodb" />
           <SkillsItem urlImg={Tailwind} framework="tailwind" />
+          <SkillsItem urlImg={firebaseLogo} framework="firebase" />
         </div>
       </div>
     </div>

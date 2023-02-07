@@ -2,8 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 export default function Main() {
+  const router = useRouter();
+  const handleResume = (e) => {
+    e.preventDefault();
+    router.push('/myResume');
+  };
   return (
     <div id="main" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
@@ -45,10 +51,7 @@ export default function Main() {
                 <AiOutlineMail />
               </div>
             </a>
-            <Link
-              href="https://online.flippingbook.com/view/1070624447"
-              target="_blank"
-            >
+            <Link onClick={handleResume} href="/#myResume" target="_blank">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-125 ease-in duration-150">
                 <BsFillPersonLinesFill />
               </div>

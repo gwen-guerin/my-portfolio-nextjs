@@ -50,6 +50,11 @@ const NavBar = () => {
     window.addEventListener('scroll', handleShadow);
   }, []);
 
+  const handleResume = (e) => {
+    e.preventDefault();
+    router.push('/myResume');
+    setNav(!nav)
+  };
   return (
     <div
       style={{ backgroundColor: `${navBg}` }}
@@ -179,18 +184,21 @@ const NavBar = () => {
                     <AiFillLinkedin />
                   </div>
                 </a>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
-                  <AiFillGithub />
-                </div>
+                <a
+                  href="https://github.com/gwen-guerin"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
+                    <AiFillGithub />
+                  </div>
+                </a>
                 <a href="mailto:gwenael.guerin@protonmail.com">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
                     <AiOutlineMail />
                   </div>
                 </a>
-                <Link
-                  href="https://online.flippingbook.com/view/1070624447/"
-                  target="_blank"
-                >
+                <Link onClick={handleResume} href="/#myResume" target="_blank">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-125 ease-in duration-150">
                     <BsFillPersonLinesFill />
                   </div>
